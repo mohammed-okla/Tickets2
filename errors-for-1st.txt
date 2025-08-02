@@ -1,0 +1,193 @@
+the design is not bad at all but i would love to pick a perfect colors to make the app professionally, also the logo should be bigger and showing more clearly 
+focus on translate the app to Arabic fully 
+add dark and light theme and make the default as the system    
+------------------------------------------------------------------------------------
+sign up errors: there's no need to +963 cuz all users are Syrian, also the place of account type should be up the name and should be as section ( do not delete the account features section cuz it so cool)
+sign in errors: remember me bottom is not working and not even showing, the sign in using google and Facebook is not working ( i didn't know how to make it work on supabase) also it useless since it's not available on signup 
+forget the password errors : there something wrong here double check it and check the logic of it 
+--------------------------------------------------------------------------------
+driver:
+1- no Arabic support
+2- error on generate qr code :
+XHRGET
+https://zedwbdksnduazpdveoab.supabase.co/rest/v1/qr_codes?select=*,usage_count:transactions(count)&created_by=eq.489aab41-138f-4d06-a350-85788541a4af&order=created_at.desc
+[HTTP/3 400  1072ms]
+
+Error fetching QR codes: 
+Object { code: "42703", details: null, hint: 'Perhaps you meant to reference the column "qr_codes.created_at".', message: "column qr_codes.created_by does not exist" }
+index-CVWgX984.js:647:244
+
+3- /driver/qr-code showing nothings
+
+4-/driver/wallet showing nothings
+
+5- /driver/transactions showing nothings
+
+6- errors on driver/profile and driver/settings such as the way of write the sections, buttom not working (avatar,all accountActions,...etc buttoms)
+7- /driver/trips error falid to fitch 
+8- notificion buttom not working when i click on it 
+9- the app show api of supabase for users on console of the browser!!
+10- the app show a flex continer "bulid by scout" in all pages (delete it)
+11- there is no verfiticon from the driver ( the driver after he create the account he should send a verification info and files(or photos) to verification that he is driver and the after he fill the form it show him to wait until support accept it, if support (on our case admin) accept the driver verfiticon, if not the profile of driver is frizzing, and if the driver didn't send the verification info after 1 week of creating account the account will be frizzing too
+it is importint that it show to him and remember the driver to do verification until he send the info and after the send it show pending and whem he got accept it turn ti approve until the driver click ok to confirm he see that accepted.
+
+logs :
+XHRGET
+https://zedwbdksnduazpdveoab.supabase.co/rest/v1/transactions?select=id,amount,created_at,status,from_user_id,metadata,profiles!transactions_from_user_id_fkey(full_name)&to_user_id=eq.489aab41-138f-4d06-a350-85788541a4af&type=eq.transport_payment&order=created_at.desc
+[HTTP/3 400  726ms]
+
+XHRGET
+https://zedwbdksnduazpdveoab.supabase.co/rest/v1/transactions?select=id,amount,created_at,status,from_user_id,metadata,profiles!transactions_from_user_id_fkey(full_name)&to_user_id=eq.489aab41-138f-4d06-a350-85788541a4af&type=eq.transport_payment&order=created_at.desc
+[HTTP/3 400  726ms]
+
+Error fetching trips: 
+Object { code: "42703", details: null, hint: null, message: "column transactions.metadata does not exist" }
+index-CVWgX984.js:644:678
+Error fetching trips: 
+Object { code: "42703", details: null, hint: null, message: "column transactions.metadata does not exist" }
+index-CVWgX984.js:644:678
+
+​
+XHRGET
+https://zedwbdksnduazpdveoab.supabase.co/rest/v1/transactions?select=id,amount,created_at,status,from_user_id,profiles!transactions_from_user_id_fkey(full_name)&to_user_id=eq.004c94e6-35ff-4e47-8387-e856bdd3b5d8&type=eq.transport_payment&order=created_at.desc&limit=5
+[HTTP/3 400  1205ms]
+
+	
+GET
+	https://zedwbdksnduazpdveoab.supabase.co/rest/v1/transactions?select=id,amount,created_at,status,from_user_id,profiles!transactions_from_user_id_fkey(full_name)&to_user_id=eq.004c94e6-35ff-4e47-8387-e856bdd3b5d8&type=eq.transport_payment&order=created_at.desc&limit=5
+Status
+400
+VersionHTTP/3
+Transferred1.20 kB (95 B size)
+Referrer Policystrict-origin-when-cross-origin
+DNS ResolutionSystem
+
+    	
+    access-control-allow-origin
+    	https://tickets-ewalletsy.vercel.app
+    access-control-expose-headers
+    	Content-Encoding, Content-Location, Content-Range, Content-Type, Date, Location, Server, Transfer-Encoding, Range-Unit
+    alt-svc
+    	h3=":443"; ma=86400
+    cf-cache-status
+    	DYNAMIC
+    cf-ray
+    	9689b8697a53e01d-NRT
+    content-encoding
+    	gzip
+    content-type
+    	application/json; charset=utf-8
+    date
+    	Sat, 02 Aug 2025 01:14:47 GMT
+    priority
+    	u=4,i=?0
+    sb-gateway-version
+    	1
+    sb-project-ref
+    	zedwbdksnduazpdveoab
+    sb-request-id
+    	01986858-7df7-7423-8055-36e2b96baf17
+    server
+    	cloudflare
+    server-timing
+    	cfExtPri
+    set-cookie
+    	__cf_bm=k9Bl9TEa.dm.foFT9Tr5.hE4H5oqmx9.Z08Snmv9xLA-1754097287-1.0.1.1-5JAK8pVqNCaN7TLhviMTeqNaxNIP3YUDRpRnokXxX6Ja7dwlTi34HKp2kt_HcaY0JuAhWB95z60hAkMOrdkwlsevx7eEtWDG2R3S6PbqyKE; path=/; expires=Sat, 02-Aug-25 01:44:47 GMT; domain=.supabase.co; HttpOnly; Secure; SameSite=None
+    strict-transport-security
+    	max-age=31536000; includeSubDomains; preload
+    vary
+    	Accept-Encoding
+    x-content-type-options
+    	nosniff
+    x-envoy-attempt-count
+    	1
+    x-envoy-upstream-service-time
+    	66
+    	
+    Accept
+    	*/*
+    Accept-Encoding
+    	gzip, deflate, br, zstd
+    Accept-Language
+    	en-US,en;q=0.5
+    accept-profile
+    	public
+    apikey
+    	eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InplZHdiZGtzbmR1YXpwZHZlb2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwMDcwNDIsImV4cCI6MjA2OTU4MzA0Mn0.LjhdIRxPhAM0JTUdX9YdxHaSkffoDLV4RBkglKFksxI
+    authorization
+    	Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6ImpxdzdFWXNNYk5hM3dqQW0iLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3plZHdiZGtzbmR1YXpwZHZlb2FiLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIwMDRjOTRlNi0zNWZmLTRlNDctODM4Ny1lODU2YmRkM2I1ZDgiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzU0MDk5NzIyLCJpYXQiOjE3NTQwOTYxMjIsImVtYWlsIjoidXBoZXJvN0BnbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsIjoidXBoZXJvN0BnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZnVsbF9uYW1lIjoiTWFrZWwgV2x0cmVzIiwicGhvbmVfdmVyaWZpZWQiOmZhbHNlLCJzdWIiOiIwMDRjOTRlNi0zNWZmLTRlNDctODM4Ny1lODU2YmRkM2I1ZDgiLCJ1c2VyX3JvbGUiOiJwYXNzZW5nZXIifSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJvdHAiLCJ0aW1lc3RhbXAiOjE3NTQwOTYxMjJ9XSwic2Vzc2lvbl9pZCI6ImYzZTZjNzc4LTU4ZGEtNDEyYi1hYjJhLWFjYmEzMzFjYTdjNCIsImlzX2Fub255bW91cyI6ZmFsc2V9.r9kA1nQ6b4YOMAgIaTz6ADn8XDr2gfxTxy3XnZs5MLM
+    Connection
+    	keep-alive
+    Host
+    	zedwbdksnduazpdveoab.supabase.co
+    Origin
+    	https://tickets-ewalletsy.vercel.app
+    Priority
+    	u=4
+    Referer
+    	https://tickets-ewalletsy.vercel.app/
+    Sec-Fetch-Dest
+    	empty
+    Sec-Fetch-Mode
+    	cors
+    Sec-Fetch-Site
+    	cross-site
+    TE
+    	trailers
+    User-Agent
+    	Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+    x-client-info
+    	supabase-js-web/2.53.0
+​
+
+------------------------------------------------------------------------------------------------------
+
+passenger (normal user) errors :
+
+1- passenger/scanner the camera is not working 
+2- notificion bottom not working when i click on it 
+3- the design of wallet is boring make the design so professional
+4- when user do transaction such as recharge and click on this transaction it should show him a ticket incloud information about that with super beautiful design and animation and should be abile to download it as pdf file 
+5- like the driver there's errors on profile and settings such as the way of write the sections, buttom not working (avatar,all accountActions,...etc buttoms)
+6- the Arabic language 
+7- when user pay for the ticket and the ticket show with the inforemtions the user should have a dispute bottom and form to fill if he want to dispute the ticket. 
+----------------------------------------------------------------------------------------
+Merchant errors:
+
+1- notificion bottom not working when i click on it 
+2- the Arabic language 
+3- the logic of Merchant qr code is simple ... just a page to include the info and then generate a one qr code with code (for case of manuly input of user) so the user can scan or input it directly and pay (the qr code can change if the user input new information for a new amount)
+if the user scan and pay for Merchant (the generated ticket of user in transiction ganna include info of this payment for the Merchant (such as description, business name)
+4- the pages : wallet,transactioins, qr code show nothings
+5- business page is not created yet and it showing coming soon (do build it) 
+6- like the driver there's errors on profile and settings such as the way of write the sections, buttom not working (avatar,all accountActions,...etc buttoms)
+
+----------------------------------------------------------------------------------
+admin errors :
+1- notificion bottom not working when i click on it 
+2- the Arabic language 
+3-systemDashboard has bottom but they are not working when i click on them
+4- transactioins and users pages showing nothings 
+5- Analytics showing fake information not a real information
+6- dispute showing coming soon , make sure when user do dispute to show information of both ( the user,driver or Merchant, or event)
+7- like the driver there's errors on profile and settings such as the way of write the sections, buttom not working (avatar,all accountActions,...etc buttoms)
+8- there's no page or place to send notifications to users, driver , Merchant, event admin bulid it and make that it support email too, and support multi options of sendig notifications( for ex send to all users)
+9- the admin should be abile to send notifictions outside the app not just only on app
+10- there is no place to handele driver verfiction informations and accept or reject it 
+11- the admin should have access to events and can handle anyting he want and need.
+12- the admin must have the ability to add or create other admins (but those admin are low place then the main one) and when he do that he can spifsec about the access of each (like someone to track disputes and users).
+
+
+------------------------------------------------------------------------------------------
+admin event error:
+
+after sign in it stay on loading without showing anythings
+logs :
+Uncaught SyntaxError: Identifier 'isIFramePreview' has already been declared (at (index):81:32)Understand this error
+hook.js:608 Service Worker registration failed:  SecurityError: Failed to register a ServiceWorker for scope ('https://tickets-ewalletsy.vercel.app/') with script ('https://tickets-ewalletsy.vercel.app/csb-sw.js'): The script has an unsupported MIME type ('text/html').
+overrideMethod @ hook.js:608Understand this error
+-----------------------------------------------------------------------------
+general issues:
+1-there's no section on all user type to call the support (in our case the admin) add a small chat to admin (include only text and support send photos) and in the admin the chat will be section as the type of account 
+2- there is no police for the app so can the users accept it 
+3- there is no place include information about the company to contact 
